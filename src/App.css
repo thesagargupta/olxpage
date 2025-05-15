@@ -392,7 +392,10 @@ select:focus {
 .char-input-wrapper textarea {
   resize: vertical;
 }
-
+.name-sagar{
+  font-size: 15px;
+  color: #666;
+}
 .char-count {
   font-size: 12px;
   color: #888;

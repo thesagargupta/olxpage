@@ -319,7 +319,7 @@ function App() {
 
   return (
     <div className="form-container">
-      <h2>POST YOUR AD</h2>
+      <h2>POST YOUR AD  <span className="name-sagar">#created by Sagar Gupta</span></h2>
       <div className="category-section">
         <h4>SELECTED CATEGORY</h4>
         <p>

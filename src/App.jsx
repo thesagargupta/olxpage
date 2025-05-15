@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import imagePng from "./assets/image-out.png";
-import defaultAvatar from './assets/image-out.png';
-
+import defaultAvatar from "./assets/image-out.png";
 
 function App() {
   const propertyTypes = [
@@ -51,7 +50,7 @@ function App() {
     "Under Construction",
   ];
   const [profileImage, setProfileImage] = useState(null);
-  const [userName, setUserName] = useState("Yoyo");
+  const [userName, setUserName] = useState("Sagar");
   const maxNameLength = 30;
   const phoneNumber = "+91 8809197377";
 
@@ -435,32 +434,50 @@ function App() {
           </select>
 
           <label>Project Name</label>
-          <input
-            type="text"
-            name="projectName"
-            value={formData.projectName}
-            onChange={handleChange}
-          />
+          <div className="char-input-wrapper">
+            <input
+              type="text"
+              name="projectName"
+              maxLength={70}
+              value={formData.projectName}
+              onChange={handleChange}
+            />
+            <div className="char-count">{formData.projectName.length} / 70</div>
+          </div>
 
           <label>Ad Title *</label>
-          <input
-            className={errors.title ? "input-error" : ""}
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-          />
-          {errors.title && <p className="error">{errors.title}</p>}
+          <div className="char-input-wrapper">
+            <input
+              className={errors.title ? "input-error" : ""}
+              type="text"
+              name="title"
+              placeholder="Mention the key features of your item (e.g. brand, model, age, type)"
+              maxLength={70}
+              value={formData.title}
+              onChange={handleChange}
+            />
+            <div className="char-count">{formData.title.length} / 70</div>
+            {errors.title && <p className="error">{errors.title}</p>}
+          </div>
 
           <label>Description *</label>
-          <input
-            className={errors.description ? "input-error" : ""}
-            type="text"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-          />
-          {errors.description && <p className="error">{errors.description}</p>}
+          <div className="char-input-wrapper">
+            <textarea
+              className={errors.description ? "input-error" : ""}
+              name="description"
+              placeholder="Include condition, features and reason for selling"
+              maxLength={4096}
+              rows={4}
+              value={formData.description}
+              onChange={handleChange}
+            />
+            <div className="char-count">
+              {formData.description.length} / 4096
+            </div>
+            {errors.description && (
+              <p className="error">{errors.description}</p>
+            )}
+          </div>
 
           <label>Price *</label>
           <div className="price-input-container">

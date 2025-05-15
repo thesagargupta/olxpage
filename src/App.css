@@ -376,6 +376,30 @@ select:focus {
   color: gray;
   text-align: right;
 }
+.char-input-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.char-input-wrapper input,
+.char-input-wrapper textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.char-input-wrapper textarea {
+  resize: vertical;
+}
+
+.char-count {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+  margin-top: 4px;
+}
+
 .phone-number-display {
   margin-top: 10px;
   font-size: 16px;
